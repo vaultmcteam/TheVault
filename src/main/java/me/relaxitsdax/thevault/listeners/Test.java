@@ -11,6 +11,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.util.Transformation;
 import org.bukkit.util.Vector;
 
 public class Test implements Listener {
@@ -23,6 +24,16 @@ public class Test implements Listener {
 
         BlockDisplay e = (BlockDisplay) player.getWorld().spawnEntity(loc, EntityType.BLOCK_DISPLAY);
         e.setBlock(Material.DIAMOND_BLOCK.createBlockData());
+
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+                Vector v = e.getLocation().toVector().rotateAroundAxis(player.getEyeLocation().getDirection(), 2);
+                Transformation prev = e.getTransformation();
+                e.setTransformation(new Transformation(v.toVector3f(), prev.getLeftRotation(), prev.getScale(), prev.getRightRotation()));
+
+            }
+        }.runTaskTimer(TheVault.getInstance(), 1, 1);
 
         new BukkitRunnable() {
             @Override
