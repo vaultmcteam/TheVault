@@ -1,0 +1,4 @@
+name: TheVault
+version: '${project.version}'
+main: me.relaxitsdax.thevault.TheVault
+api-version: '1.20'
