@@ -26,10 +26,12 @@ public class Test implements Listener {
         BlockDisplay e = (BlockDisplay) player.getWorld().spawnEntity(loc, EntityType.BLOCK_DISPLAY);
         e.setBlock(Material.DIAMOND_BLOCK.createBlockData());
 
+        Vector v = e.getLocation().toVector();
+
         BukkitTask task = new BukkitRunnable() {
             @Override
             public void run() {
-                Vector v = e.getLocation().toVector().rotateAroundAxis(player.getLocation().toVector(), 10);
+                v.rotateAroundAxis(new Vector(0, 1, 0), 10);
                 Transformation prev = e.getTransformation();
                 e.setTransformation(new Transformation(v.toVector3f(), prev.getLeftRotation(), prev.getScale(), prev.getRightRotation()));
 
