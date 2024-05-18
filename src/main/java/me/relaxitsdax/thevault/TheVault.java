@@ -1,5 +1,6 @@
 package me.relaxitsdax.thevault;
 
+import me.relaxitsdax.thevault.listeners.Test;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -11,6 +12,7 @@ public final class TheVault extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         Bukkit.getLogger().log(Level.ALL, "Hi!");
+        getServer().getPluginManager().registerEvents(new Test(), this);
 
     }
 
