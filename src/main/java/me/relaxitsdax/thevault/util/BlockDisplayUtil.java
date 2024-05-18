@@ -7,8 +7,6 @@ import org.bukkit.util.Transformation;
 public class BlockDisplayUtil {
 
     public static void rotateAround(Location point, Location axis, double degrees) {
-
-    point.toVector().rotateAroundAxis(axis)
     }
 
 }
