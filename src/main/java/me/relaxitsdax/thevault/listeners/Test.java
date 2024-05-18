@@ -31,7 +31,7 @@ public class Test implements Listener {
         BukkitTask task = new BukkitRunnable() {
             @Override
             public void run() {
-                v.rotateAroundAxis(player.getLocation().toVector().add(new Vector(0, 1, 0)), 0.01);
+                v.rotateAroundAxis(player.getLocation().toVector().add(new Vector(0, 1, 0)), 0.1);
                 Transformation prev = e.getTransformation();
                 e.setTransformation(new Transformation(v.toVector3f(), prev.getLeftRotation(), prev.getScale(), prev.getRightRotation()));
 
