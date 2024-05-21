@@ -2,6 +2,7 @@ package me.relaxitsdax.thevault.listeners;
 
 import me.relaxitsdax.thevault.TheVault;
 import net.kyori.adventure.text.Component;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.BlockDisplay;
@@ -25,6 +26,7 @@ public class Test implements Listener {
 
         BlockDisplay e = (BlockDisplay) player.getWorld().spawnEntity(loc, EntityType.BLOCK_DISPLAY);
         e.setBlock(Material.DIAMOND_BLOCK.createBlockData());
+        e.setInterpolationDuration(1); // fiddle around with this number. not sure which is the best
 
         Vector v = e.getLocation().toVector();
 
