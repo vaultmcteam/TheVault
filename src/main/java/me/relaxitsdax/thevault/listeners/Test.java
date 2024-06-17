@@ -35,6 +35,7 @@ public class Test implements Listener {
             public void run() {
                 v.rotateAroundAxis(new Vector(0, 1, 0), 0.1);
                 Transformation prev = e.getTransformation();
+                e.setInterpolationDelay(0);
                 e.setTransformation(new Transformation(v.toVector3f(), prev.getLeftRotation(), prev.getScale(), prev.getRightRotation()));
 
             }
